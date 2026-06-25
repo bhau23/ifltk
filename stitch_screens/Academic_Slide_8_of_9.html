@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI-Ready Academic Metadata Layer - eQOURSE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Sora:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed": "#a9a5fa",
+                    "secondary-fixed-dim": "#69e9d5",
+                    "primary-dim": "#4d4a97",
+                    "surface-container": "#ebeef0",
+                    "inverse-on-surface": "#9b9d9e",
+                    "on-primary-fixed": "#0b0054",
+                    "surface-dim": "#d5dbdd",
+                    "surface-container-low": "#f1f4f5",
+                    "on-secondary-fixed-variant": "#00675c",
+                    "error-dim": "#6b0221",
+                    "surface-variant": "#dee3e6",
+                    "tertiary-fixed": "#ffd709",
+                    "inverse-surface": "#0c0f10",
+                    "error": "#a8364b",
+                    "inverse-primary": "#a9a5fa",
+                    "primary-container": "#a9a5fa",
+                    "on-primary": "#fbf7ff",
+                    "on-error-container": "#6e0523",
+                    "background": "#f8f9fa",
+                    "primary-fixed-dim": "#9b98eb",
+                    "on-error": "#fff7f7",
+                    "tertiary-dim": "#635200",
+                    "on-primary-fixed-variant": "#312c79",
+                    "secondary": "#006b5f",
+                    "surface-container-highest": "#dee3e6",
+                    "on-surface": "#2d3335",
+                    "surface-container-high": "#e5e9eb",
+                    "outline": "#767c7e",
+                    "on-tertiary-fixed-variant": "#665500",
+                    "error-container": "#f97386",
+                    "on-secondary-container": "#005d52",
+                    "on-tertiary-container": "#5b4b00",
+                    "secondary-container": "#79f7e3",
+                    "on-secondary-fixed": "#004840",
+                    "secondary-dim": "#005e53",
+                    "tertiary-fixed-dim": "#efc900",
+                    "on-tertiary-fixed": "#453900",
+                    "tertiary": "#705e00",
+                    "surface": "#f8f9fa",
+                    "on-surface-variant": "#5a6062",
+                    "surface-tint": "#5956a4",
+                    "secondary-fixed": "#79f7e3",
+                    "on-secondary": "#e2fff8",
+                    "surface-bright": "#f8f9fa",
+                    "tertiary-container": "#ffd709",
+                    "on-tertiary": "#fff8ec",
+                    "on-background": "#2d3335",
+                    "on-primary-container": "#272270",
+                    "primary": "#5956a4",
+                    "outline-variant": "#adb3b5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin": "48px",
+                    "container-max": "1440px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "title-md": [
+                            "Sora"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "headline-md": [
+                            "Sora"
+                    ],
+                    "label-sm": [
+                            "Inter"
+                    ],
+                    "display-lg": [
+                            "Sora"
+                    ]
+            },
+            "fontSize": {
+                    "title-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background min-h-screen flex flex-col items-center justify-center font-body-md text-on-surface p-8 pb-32">
+<!-- Main Presentation Container -->
+<main class="w-full max-w-[1280px] bg-surface-container-lowest rounded-xl shadow-[0px_4px_40px_rgba(27,20,100,0.08)] overflow-hidden flex flex-col relative aspect-[16/9]">
+<!-- Header -->
+<header class="flex justify-between items-center px-12 py-8 shrink-0">
+<div class="h-12 w-auto flex items-center">
+<img alt="eQOURSE Logo" class="h-full object-contain mix-blend-multiply" src="https://lh3.googleusercontent.com/aida/AP1WRLsSS4sn6kxS3Wtf65rdXRcjPRv4OoWW-ptUAaZuO4HdMJmzYU0Z-TKc4RxxfS58wG4_5usbrZ2Xwa2OAbfcV91j_UPdJgBBoSGdsMPBNP-FkUTkUw2zOfyn2EJBCRykDjr9QHg2AW3gu9-0tw-6ZsdnEmcdKuZiTfaTNwq5Ar59xmCQFWfUoPgGW7H994aUjY2isBe2aw2SfitSououjVsJgRMMatVC95wz8vzvGuCdO-eGahapks1IqQ"/>
+</div>
+<div class="bg-secondary/10 text-secondary border border-secondary/20 px-4 py-1.5 rounded-full font-label-sm font-semibold tracking-wide uppercase">
+                Academics
+            </div>
+</header>
+<!-- Content Area -->
+<div class="flex-1 px-12 flex flex-col">
+<!-- Titles -->
+<div class="mb-10 shrink-0">
+<h1 class="font-headline-md text-[38px] leading-tight text-primary-dim mb-3">AI-Ready Academic Metadata Layer</h1>
+<p class="font-body-md text-[18px] text-on-surface-variant max-w-3xl">Structured content that supports diagnostics, adaptivity and recommendations</p>
+</div>
+<!-- Three-Section Layout (Grid 12 cols) -->
+<div class="flex-1 grid grid-cols-12 gap-x-8 gap-y-10 min-h-0 pb-8">
+<!-- Top Row: Per-Question Metadata & Hero Visual -->
+<div class="col-span-12 grid grid-cols-12 gap-8 h-[220px]">
+<!-- 1. Per-Question Metadata -->
+<div class="col-span-4 flex flex-col">
+<h2 class="font-label-sm text-on-surface-variant tracking-wider uppercase mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">data_object</span>
+                            Per-Question Metadata
+                        </h2>
+<div class="flex flex-wrap gap-2.5 content-start flex-1">
+<span class="bg-secondary/10 text-secondary border border-secondary/20 px-3 py-1.5 rounded-full font-label-sm text-[13px]">Knowledge point</span>
+<span class="bg-primary/10 text-primary-dim border border-primary/20 px-3 py-1.5 rounded-full font-label-sm text-[13px]">Difficulty</span>
+<span class="bg-tertiary/10 text-tertiary border border-tertiary/20 px-3 py-1.5 rounded-full font-label-sm text-[13px]">Cognitive level</span>
+<span class="bg-secondary/10 text-secondary border border-secondary/20 px-3 py-1.5 rounded-full font-label-sm text-[13px]">Question type</span>
+<span class="bg-primary/10 text-primary-dim border border-primary/20 px-3 py-1.5 rounded-full font-label-sm text-[13px]">Board alignment</span>
+<span class="bg-tertiary/10 text-tertiary border border-tertiary/20 px-3 py-1.5 rounded-full font-label-sm text-[13px]">Visual classification</span>
+</div>
+</div>
+<!-- 2. Learning Flow (Hero Visual) -->
+<div class="col-span-8 bg-surface-container-low rounded-xl border border-surface-variant p-6 flex flex-col justify-between relative overflow-hidden">
+<h2 class="font-label-sm text-on-surface-variant tracking-wider uppercase mb-2 flex items-center gap-2 relative z-10">
+<span class="material-symbols-outlined text-primary text-[18px]">account_tree</span>
+                            Learning Flow
+                        </h2>
+<!-- Flow Diagram -->
+<div class="flex-1 flex items-center justify-between relative z-10 px-4 mt-4">
+<!-- Connecting Line -->
+<div class="absolute top-[35px] left-12 right-12 h-1 bg-gradient-to-r from-secondary/20 via-primary/40 to-secondary/20 -z-10"></div>
+<!-- Nodes -->
+<div class="flex flex-col items-center gap-3 w-24">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-lowest border border-outline-variant shadow-sm flex items-center justify-center text-primary-dim z-10">
+<span class="material-symbols-outlined text-[28px]">sell</span>
+</div>
+<span class="text-center font-label-sm text-[12px] leading-tight text-on-surface font-semibold">Tagged<br/>Question</span>
+</div>
+<div class="flex flex-col items-center gap-3 w-24">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-lowest border border-outline-variant shadow-sm flex items-center justify-center text-secondary z-10">
+<span class="material-symbols-outlined text-[28px]">edit_document</span>
+</div>
+<span class="text-center font-label-sm text-[12px] leading-tight text-on-surface font-semibold">Student<br/>Response</span>
+</div>
+<div class="flex flex-col items-center gap-3 w-24">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-lowest border-2 border-primary shadow-[0_0_15px_rgba(89,86,164,0.2)] flex items-center justify-center text-primary z-10 scale-110">
+<span class="material-symbols-outlined text-[32px] filled-icon">troubleshoot</span>
+</div>
+<span class="text-center font-label-sm text-[12px] leading-tight text-primary font-bold">Gap<br/>Detection</span>
+</div>
+<div class="flex flex-col items-center gap-3 w-24">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-lowest border border-outline-variant shadow-sm flex items-center justify-center text-tertiary-dim z-10">
+<span class="material-symbols-outlined text-[28px]">model_training</span>
+</div>
+<span class="text-center font-label-sm text-[12px] leading-tight text-on-surface font-semibold">Recommended<br/>Practice</span>
+</div>
+<div class="flex flex-col items-center gap-3 w-24">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-lowest border border-outline-variant shadow-sm flex items-center justify-center text-primary-dim z-10">
+<span class="material-symbols-outlined text-[28px]">monitoring</span>
+</div>
+<span class="text-center font-label-sm text-[12px] leading-tight text-on-surface font-semibold">Progress<br/>Report</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Row: Capabilities & Highlight -->
+<div class="col-span-12 grid grid-cols-12 gap-8 min-h-0">
+<!-- 3. Capabilities Unlocked -->
+<div class="col-span-9 flex flex-col h-full">
+<h2 class="font-label-sm text-on-surface-variant tracking-wider uppercase mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-dim text-[18px]">lock_open</span>
+                            Capabilities Unlocked
+                        </h2>
+<div class="grid grid-cols-3 grid-rows-2 gap-4 flex-1">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-lg p-4 flex items-center gap-4 hover:border-primary/30 transition-colors hover:shadow-sm">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]">psychology</span>
+</div>
+<span class="font-label-sm font-semibold text-on-surface leading-snug">Diagnostics</span>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-lg p-4 flex items-center gap-4 hover:border-primary/30 transition-colors hover:shadow-sm">
+<div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[20px]">route</span>
+</div>
+<span class="font-label-sm font-semibold text-on-surface leading-snug">Adaptive sequencing</span>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-lg p-4 flex items-center gap-4 hover:border-primary/30 transition-colors hover:shadow-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary-dim shrink-0">
+<span class="material-symbols-outlined text-[20px]">user_attributes</span>
+</div>
+<span class="font-label-sm font-semibold text-on-surface leading-snug">Personalised revision</span>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-lg p-4 flex items-center gap-4 hover:border-primary/30 transition-colors hover:shadow-sm">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]">insert_chart</span>
+</div>
+<span class="font-label-sm font-semibold text-on-surface leading-snug">Topic mastery tracking</span>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-lg p-4 flex items-center gap-4 hover:border-primary/30 transition-colors hover:shadow-sm">
+<div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[20px]">layers</span>
+</div>
+<span class="font-label-sm font-semibold text-on-surface leading-snug">Cognitive-level analysis</span>
+</div>
+<!-- Card 6 -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-lg p-4 flex items-center gap-4 hover:border-primary/30 transition-colors hover:shadow-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary-dim shrink-0">
+<span class="material-symbols-outlined text-[20px]">domain</span>
+</div>
+<span class="font-label-sm font-semibold text-on-surface leading-snug">Student and institution-level reporting</span>
+</div>
+</div>
+</div>
+<!-- Bottom Highlight -->
+<div class="col-span-3 flex flex-col justify-end">
+<div class="bg-primary-dim text-on-primary p-6 rounded-xl relative overflow-hidden h-[calc(100%-36px)] flex items-center justify-center">
+<!-- Subtle abstract bg element -->
+<div class="absolute -bottom-10 -right-10 w-32 h-32 rounded-full bg-primary opacity-20 blur-xl"></div>
+<div class="absolute top-4 left-4 text-primary opacity-30">
+<span class="material-symbols-outlined text-[40px] filled-icon">format_quote</span>
+</div>
+<p class="font-title-md text-[18px] leading-snug text-center relative z-10 font-medium">
+                                "The stronger the academic structure, the more meaningful the AI-supported learning journey becomes"
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Persistent Bottom Navigation Bar -->
+<div class="fixed bottom-0 w-full z-50 flex flex-col justify-between items-center bg-surface dark:bg-surface-container shadow-[0_-4px_20px_rgba(0,0,0,0.05)] border-t border-surface-variant">
+<!-- Progress Bar -->
+<div class="w-full h-1 bg-surface-container-high relative">
+<div class="absolute top-0 left-0 h-full bg-primary transition-all duration-500 ease-in-out" style="width: 88%;"></div>
+</div>
+<div class="flex justify-between items-center w-full px-12 py-4 max-w-[1280px] mx-auto">
+<!-- Left Actions -->
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors font-label-sm group">
+<span class="material-symbols-outlined text-[20px] group-hover:-translate-x-1 transition-transform">arrow_left_alt</span>
+                    Previous
+                </button>
+<div class="w-px h-4 bg-outline-variant/50"></div>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors font-label-sm group">
+<span class="material-symbols-outlined text-[18px]">menu</span>
+                    Back to Menu
+                </button>
+</div>
+<!-- Center Counter -->
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-on-surface-variant">Slide 8 of 9</span>
+</div>
+<!-- Right Action -->
+<div class="flex items-center">
+<button class="bg-primary-dim hover:bg-primary text-on-primary px-6 py-2.5 rounded-lg flex items-center gap-2 font-label-sm font-semibold transition-all shadow-sm active:scale-95 group">
+                    Next
+                    <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

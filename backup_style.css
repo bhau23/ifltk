@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+body {
+    overflow: hidden; /* Hide scrollbars for the whole app */
+    background-color: white; /* Base is white as requested */
+}
+
+h1, h2, h3, h4, h5, h6, .font-sora {
+    font-family: 'Sora', sans-serif !important;
+}
+
+/* AI Generated Abstract Background Overlays (Subtle, Light Opacity) */
+.slide[data-name*="Landing"]::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('./public/backgrounds/bg_academic.png'); /* Using the light academic one instead of dark navy */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    z-index: 0;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+}
+
+.slide[data-name*="Academic"]::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('./public/backgrounds/bg_academic.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    z-index: 0;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+}
+
+.slide[data-name*="Business"]::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('./public/backgrounds/bg_business.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    z-index: 0;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+}
+
+/* Ensure the main wrapper stays above our custom blurry background */
+.slide > main {
+    position: relative;
+    z-index: 10;
+}
+
+/* Slide Transition States */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.98) translateY(10px);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s;
+    z-index: 0;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1) translateY(0);
+    z-index: 10;
+}
+
+/* Animations for elements INSIDE an active slide */
+.slide.active h1, 
+.slide.active h2 {
+    animation: slideUpFade 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    animation-delay: 0.1s;
+}
+
+.slide.active p, 
+.slide.active span, 
+.slide.active li {
+    animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    animation-delay: 0.2s;
+}
+
+.slide.active .rounded-xl, 
+.slide.active .rounded-lg,
+.slide.active .rounded-2xl {
+    animation: popIn 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+/* Stagger card animations */
+.slide.active div > div:nth-child(1) > .rounded-xl, .slide.active div > div:nth-child(1) > .rounded-2xl { animation-delay: 0.2s; }
+.slide.active div > div:nth-child(2) > .rounded-xl, .slide.active div > div:nth-child(2) > .rounded-2xl { animation-delay: 0.3s; }
+.slide.active div > div:nth-child(3) > .rounded-xl, .slide.active div > div:nth-child(3) > .rounded-2xl { animation-delay: 0.4s; }
+.slide.active div > div:nth-child(4) > .rounded-xl, .slide.active div > div:nth-child(4) > .rounded-2xl { animation-delay: 0.5s; }
+.slide.active div > div:nth-child(5) > .rounded-xl, .slide.active div > div:nth-child(5) > .rounded-2xl { animation-delay: 0.6s; }
+
+/* Custom Keyframes */
+@keyframes slideUpFade {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+    0% { opacity: 0; transform: scale(0.92) translateY(10px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Fit correctly on screen */
+.slide {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
